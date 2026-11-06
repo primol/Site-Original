@@ -130,6 +130,7 @@ politica-de-privacidade/         → política (LGPD)
 quem-somos/, reparos-express/…   → redirecionam endereços do site antigo
 css/style.css                    → visual (as cores ficam no topo do arquivo)
 js/main.js                       → rastreamento dos cliques
+gtm/original-abc-gtm.json        → contêiner do Google Tag Manager para importar (seção 10)
 img/                             → fotos
 sitemap.xml, robots.txt
 ```
@@ -195,6 +196,28 @@ Ficaram de fora de propósito (regra do Google Ads de não fazer promessas que n
 Parâmetros enviados junto: `click_location` (ex.: `header`, `card-servico`, `barra-fixa`, `topo-servico`), `service` (nome do serviço, quando houver) e `page_path`.
 
 3. O consentimento começa **negado** e muda para concedido quando o visitante clica em **Aceitar** no aviso de cookies (que só aparece depois que o ID do GTM for preenchido).
+
+### Contêiner pronto: `gtm/original-abc-gtm.json`
+
+Em vez de criar as tags uma a uma, importe o arquivo `gtm/original-abc-gtm.json`. Ele já traz:
+
+| No GTM | O que faz |
+|---|---|
+| Tag **Google tag - Google Ads** | carrega o Google Ads em todas as páginas |
+| Tag **Conversion Linker** | guarda o clique do anúncio para a conversão ser atribuída |
+| Tag **Google Ads - Conversão WhatsApp** | conta uma conversão a cada `whatsapp_click` |
+| Tag **Google Ads - Conversão Ligação** | conta uma conversão a cada `phone_click` |
+| Variáveis **Ads - ID de conversão**, **Ads - Rótulo WhatsApp**, **Ads - Rótulo Ligação** | os 3 dados que vêm do Google Ads (únicos campos para preencher) |
+| Variáveis **DL - service** e **DL - click_location** | serviço e local do clique, para relatórios |
+
+**Antes de importar**, crie no Google Ads (**Metas → Conversões → Nova ação de conversão → Site → Adicionar manualmente**) duas ações de conversão na categoria **Contato**, contagem **Uma**: `WhatsApp - clique no site` e `Ligação - clique no site`. Na tela final escolha **Usar o Gerenciador de tags do Google** e anote o **ID de conversão** (só os números, sem `AW-`) e o **Rótulo** de cada uma.
+
+**Importar:**
+1. [tagmanager.google.com](https://tagmanager.google.com) → crie a conta **Original ABC** e o contêiner **originalabc.com.br** (tipo **Web**). Copie o ID `GTM-XXXXXXX` para `js/gtm.js`.
+2. **Administrador → Importar contêiner** → escolha `gtm/original-abc-gtm.json` → espaço de trabalho **Existente (Default Workspace)** → **Mesclar** → **Renomear tags, acionadores e variáveis conflitantes** → **Confirmar**.
+3. **Variáveis** → abra as 3 variáveis `Ads - …` e troque `000000000`, `COLE_O_ROTULO_WHATSAPP` e `COLE_O_ROTULO_LIGACAO` pelos dados do Google Ads.
+4. **Visualizar** → abra o site → toque num botão de WhatsApp e num de Ligar → as tags de conversão devem aparecer como **disparadas**.
+5. **Enviar → Publicar**.
 
 ## 11. Como editar
 

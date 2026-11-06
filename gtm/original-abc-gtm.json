@@ -1,0 +1,400 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-11-06 12:00:00",
+  "containerVersion": {
+    "path": "accounts/6000000000/containers/100000000/versions/0",
+    "accountId": "6000000000",
+    "containerId": "100000000",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/6000000000/containers/100000000",
+      "accountId": "6000000000",
+      "containerId": "100000000",
+      "name": "originalabc.com.br",
+      "publicId": "GTM-XXXXXXX",
+      "usageContext": [
+        "WEB"
+      ],
+      "fingerprint": "1762430400000",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6000000000/containers/100000000/workspaces?apiLink=container"
+    },
+    "tag": [
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "tagId": "1",
+        "name": "Google tag - Google Ads",
+        "type": "googtag",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "tagId",
+            "value": "AW-{{Ads - ID de conversão}}"
+          }
+        ],
+        "fingerprint": "1762430400000",
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "tagId": "2",
+        "name": "Conversion Linker",
+        "type": "gclidw",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "enableCrossDomain",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableUrlPassthrough",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableCookieOverrides",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1762430400000",
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "tagId": "3",
+        "name": "Google Ads - Conversão WhatsApp",
+        "type": "awct",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "enableNewCustomerReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableConversionLinker",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableProductReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEnhancedConversion",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionCookiePrefix",
+            "value": "_gcl"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableShippingData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "{{Ads - ID de conversão}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "{{Ads - Rótulo WhatsApp}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "rdp",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1762430400000",
+        "firingTriggerId": [
+          "10"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "tagId": "4",
+        "name": "Google Ads - Conversão Ligação",
+        "type": "awct",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "enableNewCustomerReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableConversionLinker",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableProductReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEnhancedConversion",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionCookiePrefix",
+            "value": "_gcl"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableShippingData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "{{Ads - ID de conversão}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "{{Ads - Rótulo Ligação}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "rdp",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1762430400000",
+        "firingTriggerId": [
+          "11"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        },
+        "consentSettings": {
+          "consentStatus": "NOT_SET"
+        }
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "triggerId": "10",
+        "name": "Evento - whatsapp_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "whatsapp_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1762430400000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "triggerId": "11",
+        "name": "Evento - phone_click",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "phone_click"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1762430400000"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "variableId": "20",
+        "name": "Ads - ID de conversão",
+        "type": "c",
+        "notes": "Só os números do ID de conversão do Google Ads, SEM o AW- (ex.: 123456789).",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "000000000"
+          }
+        ],
+        "fingerprint": "1762430400000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "variableId": "21",
+        "name": "Ads - Rótulo WhatsApp",
+        "type": "c",
+        "notes": "Rótulo da ação de conversão 'WhatsApp - clique no site' (Google Ads > Metas > Conversões).",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "COLE_O_ROTULO_WHATSAPP"
+          }
+        ],
+        "fingerprint": "1762430400000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "variableId": "22",
+        "name": "Ads - Rótulo Ligação",
+        "type": "c",
+        "notes": "Rótulo da ação de conversão 'Ligação - clique no site' (Google Ads > Metas > Conversões).",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "COLE_O_ROTULO_LIGACAO"
+          }
+        ],
+        "fingerprint": "1762430400000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "variableId": "23",
+        "name": "DL - service",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "service"
+          }
+        ],
+        "fingerprint": "1762430400000"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "variableId": "24",
+        "name": "DL - click_location",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "click_location"
+          }
+        ],
+        "fingerprint": "1762430400000"
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "type": "PAGE_HOSTNAME",
+        "name": "Page Hostname"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "type": "PAGE_PATH",
+        "name": "Page Path"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "type": "REFERRER",
+        "name": "Referrer"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "100000000",
+        "type": "EVENT",
+        "name": "Event"
+      }
+    ],
+    "fingerprint": "1762430400000",
+    "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6000000000/containers/100000000/versions/0?apiLink=version"
+  }
+}
