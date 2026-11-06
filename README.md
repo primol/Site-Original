@@ -208,7 +208,7 @@ Parâmetros enviados junto: `click_location` (ex.: `header`, `card-servico`, `ba
 ## 12. Publicar no GitHub Pages
 
 1. **Settings → Pages → Build and deployment:** *Deploy from a branch*, branch `main`, pasta `/ (root)`.
-2. O site fica disponível em `https://<usuario>.github.io/Original-Est-tica-ABC/`. Todos os links são relativos, então funcionam nesse endereço e no domínio próprio.
+2. O site fica disponível em `https://primol.github.io/Site-Original/`. Todos os links são relativos, então funcionam nesse endereço e no domínio próprio.
 3. **Domínio próprio:** siga a seção 13.
 
 ## 13. Apontar `originalabc.com.br` para o GitHub Pages
@@ -218,7 +218,7 @@ Parâmetros enviados junto: `click_location` (ex.: `header`, `card-servico`, `ba
 **Passo 0 — Anote o que existe hoje.** No Registro.br (ou no painel da hospedagem, ver passo 2), tire um print da zona DNS atual. Se a empresa usa **e-mail @originalabc.com.br**, os registros `MX` (e `TXT`/`SPF`) **não podem ser apagados**.
 
 **Passo 1 — Verifique o domínio no GitHub (recomendado, evita que outra pessoa use o domínio).**
-No GitHub: foto do perfil → **Settings → Pages → Add a domain** → digite `originalabc.com.br`. O GitHub mostra um registro `TXT` (nome parecido com `_github-pages-challenge-herondsx`). Crie esse `TXT` no DNS (passo 2) e volte para clicar em **Verify**.
+No GitHub: foto do perfil → **Settings → Pages → Add a domain** → digite `originalabc.com.br`. O GitHub mostra um registro `TXT` (nome parecido com `_github-pages-challenge-primol`). Crie esse `TXT` no DNS (passo 2) e volte para clicar em **Verify**.
 
 **Passo 2 — Descubra onde o DNS é editado.** Em [registro.br](https://registro.br) → entre → clique no domínio → seção **DNS**:
 - Se os servidores forem `a.auto.dns.br` / `b.auto.dns.br` (DNS do Registro.br): clique em **Configurar zona DNS / Editar zona** e edite lá.
@@ -232,7 +232,7 @@ No GitHub: foto do perfil → **Settings → Pages → Add a domain** → digite
 | A | *(vazio / @)* | `185.199.109.153` |
 | A | *(vazio / @)* | `185.199.110.153` |
 | A | *(vazio / @)* | `185.199.111.153` |
-| CNAME | `www` | `herondsx.github.io` |
+| CNAME | `www` | `primol.github.io` |
 | AAAA *(opcional)* | *(vazio / @)* | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 
 Apague os registros `A`/`AAAA`/`CNAME` **antigos** de `@` e de `www` que apontam para a hospedagem antiga. **Não mexa** em `MX` e nos `TXT` de e-mail.
