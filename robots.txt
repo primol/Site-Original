@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://originalabc.com.br/sitemap.xml

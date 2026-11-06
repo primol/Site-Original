@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página não encontrada | Original ABC</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root{--bg:#0b0b0d;--red:#d71920;--wa:#25d366}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:#f5f5f4;font:17px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center}
+    h1{font:800 italic clamp(4rem,18vw,9rem)/1 "Barlow Condensed",Impact,sans-serif;color:var(--red);letter-spacing:-.02em}
+    h2{font:800 italic clamp(1.6rem,6vw,2.6rem)/1.1 "Barlow Condensed",Impact,sans-serif;text-transform:uppercase;margin:8px 0 12px}
+    p{color:#b4b6bc;max-width:480px;margin:0 auto 28px}
+    .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+    a{display:inline-flex;align-items:center;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;font-size:.875rem}
+    .home{background:var(--red);color:#fff}.wa{background:var(--wa);color:#0b0b0d}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <h2>Página não encontrada</h2>
+    <p>O endereço pode ter mudado. Volte para a página inicial ou fale com a gente pelo WhatsApp.</p>
+    <div class="row">
+      <a class="home" href="/" data-home>Página inicial</a>
+      <a class="wa" href="https://wa.me/5511983980583?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20para%20o%20meu%20ve%C3%ADculo." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </main>
+  <script>
+    // Funciona tanto no domínio próprio quanto em usuario.github.io/repositorio/
+    (function () {
+      var seg = location.pathname.split('/')[1];
+      if (/github\.io$/.test(location.hostname) && seg) document.querySelector('[data-home]').href = '/' + seg + '/';
+    })();
+  </script>
+</body>
+</html>
