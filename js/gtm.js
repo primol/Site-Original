@@ -1,19 +1,17 @@
 /* =============================================================
    Google Tag Manager + Consent Mode (LGPD)
 
-   CONFIRMAR: cole abaixo o ID do contêiner do Google Tag Manager
-   da conta NOVA da empresa (formato GTM-XXXXXXX).
+   ID do contêiner do Google Tag Manager da conta NOVA da empresa.
 
    NÃO use os IDs do site antigo (GTM-PTMKFJJ e GTM-TSGQRHM9):
    eles pertencem à conta antiga e são bloqueados aqui.
 
-   Enquanto o ID estiver vazio, o GTM não carrega e o aviso de
-   cookies não aparece. Os cliques continuam sendo registrados no
-   dataLayer (ver js/main.js) e passam a ir para o GTM assim que
-   o ID for preenchido.
+   Se o ID ficar vazio, o GTM não carrega e o aviso de cookies não
+   aparece. Os cliques continuam sendo registrados no dataLayer
+   (ver js/main.js).
    ============================================================= */
 (function () {
-  var GTM_ID = ''; // ex.: 'GTM-ABC1234'
+  var GTM_ID = 'GTM-NM35MF82';
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };

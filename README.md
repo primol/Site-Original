@@ -116,8 +116,9 @@ Cada serviço precisa de **um card na página inicial** (foto, nome, descrição
 - [ ] Logo em alta qualidade e o código exato do vermelho
 - [ ] Fotos: fachada, destaque, antes e depois de cada serviço
 - [ ] Retomar os acessos que hoje estão com o antigo responsável de marketing: domínio no Registro.br, Google Ads, Google Meu Negócio, Google Tag Manager, hospedagem antiga, Instagram e Facebook
-- [ ] Criar o Google Tag Manager e o Google Ads na conta da empresa e colar o ID no `<head>` das páginas
-- [ ] Apontar o domínio `originalabc.com.br` (Registro.br) para o GitHub Pages
+- [x] Criar o Google Tag Manager na conta da empresa e colar o ID no site (`GTM-NM35MF82`, em `js/gtm.js`)
+- [ ] Importar `gtm/original-abc-gtm.json` no Tag Manager, preencher as conversões do Google Ads e publicar (seção 10)
+- [x] Apontar o domínio `originalabc.com.br` (Registro.br) para o GitHub Pages
 
 ---
 
@@ -162,7 +163,6 @@ O site está pronto no formato pedido acima (estático, para o GitHub Pages). Re
 
 | O quê | Onde |
 |---|---|
-| ID do Google Tag Manager da conta **nova** | `js/gtm.js` (os IDs antigos ficam bloqueados) |
 | Tom exato do vermelho do logo (hoje `#d71920`) | `css/style.css`, variável `--red` no topo |
 | CNPJ e e-mail de contato na política | `politica-de-privacidade/index.html` |
 | Outros endereços do site antigo que precisam redirecionar | criar uma pasta igual a `quem-somos/` |
