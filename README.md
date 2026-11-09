@@ -117,7 +117,7 @@ Cada serviço precisa de **um card na página inicial** (foto, nome, descrição
 - [ ] Fotos: fachada, destaque, antes e depois de cada serviço
 - [ ] Retomar os acessos que hoje estão com o antigo responsável de marketing: domínio no Registro.br, Google Ads, Google Meu Negócio, Google Tag Manager, hospedagem antiga, Instagram e Facebook
 - [x] Criar o Google Tag Manager na conta da empresa e colar o ID no site (`GTM-NM35MF82`, em `js/gtm.js`)
-- [ ] Importar `gtm/original-abc-gtm.json` no Tag Manager, preencher as conversões do Google Ads e publicar (seção 10)
+- [ ] Importar `gtm/original-abc-gtm.json` (já preenchido com a conversão Pixel Zap) no Tag Manager e publicar (seção 10)
 - [x] Apontar o domínio `originalabc.com.br` (Registro.br) para o GitHub Pages
 
 ---
@@ -199,25 +199,24 @@ Parâmetros enviados junto: `click_location` (ex.: `header`, `card-servico`, `ba
 
 ### Contêiner pronto: `gtm/original-abc-gtm.json`
 
-Em vez de criar as tags uma a uma, importe o arquivo `gtm/original-abc-gtm.json`. Ele já traz:
+Em vez de criar as tags uma a uma, importe o arquivo `gtm/original-abc-gtm.json` no contêiner **GTM-NM35MF82**. Ele já vem preenchido com a conta do Google Ads (`AW-16569561213`):
 
 | No GTM | O que faz |
 |---|---|
-| Tag **Google tag - Google Ads** | carrega o Google Ads em todas as páginas |
+| Tag **Google tag - Google Ads** | carrega o Google Ads (`AW-16569561213`) em todas as páginas |
 | Tag **Conversion Linker** | guarda o clique do anúncio para a conversão ser atribuída |
-| Tag **Google Ads - Conversão WhatsApp** | conta uma conversão a cada `whatsapp_click` |
-| Tag **Google Ads - Conversão Ligação** | conta uma conversão a cada `phone_click` |
-| Variáveis **Ads - ID de conversão**, **Ads - Rótulo WhatsApp**, **Ads - Rótulo Ligação** | os 3 dados que vêm do Google Ads (únicos campos para preencher) |
+| Tag **Google Ads - Conversão WhatsApp (Pixel Zap)** | conta a conversão **Pixel Zap** (rótulo `BYECCPupzIwaEP3g_dw9`) a cada `whatsapp_click` |
+| Tag **Google Ads - Conversão Ligação** | **pausada**: ainda não existe conversão para o botão Ligar do site |
+| Variáveis **Ads - ID de conversão**, **Ads - Rótulo WhatsApp**, **Ads - Rótulo Ligação** | os dados que vêm do Google Ads |
 | Variáveis **DL - service** e **DL - click_location** | serviço e local do clique, para relatórios |
 
-**Antes de importar**, crie no Google Ads (**Metas → Conversões → Nova ação de conversão → Site → Adicionar manualmente**) duas ações de conversão na categoria **Contato**, contagem **Uma**: `WhatsApp - clique no site` e `Ligação - clique no site`. Na tela final escolha **Usar o Gerenciador de tags do Google** e anote o **ID de conversão** (só os números, sem `AW-`) e o **Rótulo** de cada uma.
-
 **Importar:**
-1. [tagmanager.google.com](https://tagmanager.google.com) → crie a conta **Original ABC** e o contêiner **originalabc.com.br** (tipo **Web**). Copie o ID `GTM-XXXXXXX` para `js/gtm.js`.
+1. [tagmanager.google.com](https://tagmanager.google.com) → contêiner **originalabc.com.br** (`GTM-NM35MF82`).
 2. **Administrador → Importar contêiner** → escolha `gtm/original-abc-gtm.json` → espaço de trabalho **Existente (Default Workspace)** → **Mesclar** → **Renomear tags, acionadores e variáveis conflitantes** → **Confirmar**.
-3. **Variáveis** → abra as 3 variáveis `Ads - …` e troque `000000000`, `COLE_O_ROTULO_WHATSAPP` e `COLE_O_ROTULO_LIGACAO` pelos dados do Google Ads.
-4. **Visualizar** → abra o site → toque num botão de WhatsApp e num de Ligar → as tags de conversão devem aparecer como **disparadas**.
-5. **Enviar → Publicar**.
+3. **Visualizar** → abra o site → toque num botão de WhatsApp → a tag **Google Ads - Conversão WhatsApp (Pixel Zap)** deve aparecer como **disparada**.
+4. **Enviar → Publicar**.
+
+**Para medir também o botão Ligar do site:** no Google Ads, **Metas → Conversões → + Nova ação de conversão → Site → Adicionar manualmente**, categoria **Contato**, nome `Ligação - clique no site`, contagem **Uma**. Copie o **Rótulo** para a variável **Ads - Rótulo Ligação**, despause a tag **Google Ads - Conversão Ligação** e publique.
 
 ## 11. Como editar
 

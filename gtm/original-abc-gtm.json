@@ -11,7 +11,7 @@
       "accountId": "6000000000",
       "containerId": "100000000",
       "name": "originalabc.com.br",
-      "publicId": "GTM-XXXXXXX",
+      "publicId": "GTM-NM35MF82",
       "usageContext": [
         "WEB"
       ],
@@ -83,7 +83,7 @@
         "accountId": "6000000000",
         "containerId": "100000000",
         "tagId": "3",
-        "name": "Google Ads - Conversão WhatsApp",
+        "name": "Google Ads - Conversão WhatsApp (Pixel Zap)",
         "type": "awct",
         "parameter": [
           {
@@ -207,7 +207,8 @@
         },
         "consentSettings": {
           "consentStatus": "NOT_SET"
-        }
+        },
+        "paused": true
       }
     ],
     "trigger": [
@@ -269,12 +270,12 @@
         "variableId": "20",
         "name": "Ads - ID de conversão",
         "type": "c",
-        "notes": "Só os números do ID de conversão do Google Ads, SEM o AW- (ex.: 123456789).",
+        "notes": "ID de conversão do Google Ads (conta 123-362-9550), sem o AW-.",
         "parameter": [
           {
             "type": "TEMPLATE",
             "key": "value",
-            "value": "000000000"
+            "value": "16569561213"
           }
         ],
         "fingerprint": "1762430400000"
@@ -285,12 +286,12 @@
         "variableId": "21",
         "name": "Ads - Rótulo WhatsApp",
         "type": "c",
-        "notes": "Rótulo da ação de conversão 'WhatsApp - clique no site' (Google Ads > Metas > Conversões).",
+        "notes": "Rótulo da conversão 'Pixel Zap' (clique no WhatsApp do site).",
         "parameter": [
           {
             "type": "TEMPLATE",
             "key": "value",
-            "value": "COLE_O_ROTULO_WHATSAPP"
+            "value": "BYECCPupzIwaEP3g_dw9"
           }
         ],
         "fingerprint": "1762430400000"
@@ -301,7 +302,7 @@
         "variableId": "22",
         "name": "Ads - Rótulo Ligação",
         "type": "c",
-        "notes": "Rótulo da ação de conversão 'Ligação - clique no site' (Google Ads > Metas > Conversões).",
+        "notes": "Ainda não existe conversão para o botão Ligar do site. Crie uma no Google Ads, cole o rótulo aqui e despause a tag 'Google Ads - Conversão Ligação'.",
         "parameter": [
           {
             "type": "TEMPLATE",
