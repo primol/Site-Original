@@ -62,6 +62,10 @@
   window.dataLayer = window.dataLayer || [];
   const track = (event, params = {}) => {
     window.dataLayer.push({ event, page_path: window.location.pathname, ...params });
+    // Conversão "Pixel Zap" do Google Ads (configurada em js/gtm.js)
+    if (event === 'whatsapp_click' && window.OABC_ADS_WHATSAPP && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { send_to: window.OABC_ADS_WHATSAPP });
+    }
   };
   const clickLocation = (el) => el.dataset.track || el.closest('section[id], header, footer, nav')?.id || el.closest('header, footer, nav')?.tagName.toLowerCase() || '';
   document.addEventListener('click', (e) => {

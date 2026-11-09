@@ -84,7 +84,7 @@ Cada serviço precisa de **um card na página inicial** (foto, nome, descrição
 - **Perguntas frequentes** em cada página de serviço
 - Faixa com **6x sem juros** e **atendemos todas as seguradoras**
 - **Política de Privacidade** (LGPD), que é obrigatória para o Google Ads
-- **Rastreamento de conversões:** cada clique em WhatsApp, telefone ou Como chegar envia um evento para o Google Tag Manager, para medir os clientes que vêm do Ads
+- **Rastreamento de conversões:** cada clique em WhatsApp, telefone ou Como chegar envia um evento de medição e, no WhatsApp, a conversão do Google Ads, para medir os clientes que vêm do Ads
 - SEO básico: título e descrição por página, dados estruturados (`AutoBodyShop`), `sitemap.xml` e `robots.txt`
 
 ---
@@ -116,8 +116,7 @@ Cada serviço precisa de **um card na página inicial** (foto, nome, descrição
 - [ ] Logo em alta qualidade e o código exato do vermelho
 - [ ] Fotos: fachada, destaque, antes e depois de cada serviço
 - [ ] Retomar os acessos que hoje estão com o antigo responsável de marketing: domínio no Registro.br, Google Ads, Google Meu Negócio, Google Tag Manager, hospedagem antiga, Instagram e Facebook
-- [x] Criar o Google Tag Manager na conta da empresa e colar o ID no site (`GTM-NM35MF82`, em `js/gtm.js`)
-- [ ] Importar `gtm/original-abc-gtm.json` (já preenchido com a conversão Pixel Zap) no Tag Manager e publicar (seção 10)
+- [x] Ligar a medição do Google Ads no site novo: tag do Google `GT-WV8X3T9D` e conversão Pixel Zap, em `js/gtm.js` (seção 10)
 - [x] Apontar o domínio `originalabc.com.br` (Registro.br) para o GitHub Pages
 
 ---
@@ -131,7 +130,7 @@ politica-de-privacidade/         → política (LGPD)
 quem-somos/, reparos-express/…   → redirecionam endereços do site antigo
 css/style.css                    → visual (as cores ficam no topo do arquivo)
 js/main.js                       → rastreamento dos cliques
-gtm/original-abc-gtm.json        → contêiner do Google Tag Manager para importar (seção 10)
+js/gtm.js                        → tag do Google e conversão do Google Ads (seção 10)
 img/                             → fotos
 sitemap.xml, robots.txt
 ```
@@ -181,42 +180,32 @@ Ficaram de fora de propósito (regra do Google Ads de não fazer promessas que n
 - Um trecho da página de Funilaria que citava **outra empresa** ("Crossover Autos", "mais de 40 anos")
 - A "Escola Profissionalizante / cursos" citada em Quem somos (não está no briefing)
 
-## 10. Rastreamento (Google Tag Manager)
+## 10. Rastreamento (tag do Google + Google Ads)
 
-1. Cole o ID do contêiner (formato `GTM-XXXXXXX`) em `js/gtm.js`, na linha `var GTM_ID = ''`.
-2. Cada clique dispara um evento no `dataLayer`. No GTM, crie acionadores do tipo **Evento personalizado** com estes nomes:
+A medição é feita direto pela **tag do Google `GT-WV8X3T9D`**, configurada em `js/gtm.js`. É a tag do Google da conta do Google Ads (123-362-9550), a mesma conta das campanhas, e ela inclui o Google Ads `AW-16569561213`. Como a conversão Pixel Zap é a mesma de antes, o histórico continua. Não depende do Google Tag Manager.
+
+| Em `js/gtm.js` | O que é |
+|---|---|
+| `GOOGLE_TAG_ID = 'GT-WV8X3T9D'` | tag do Google, carregada em todas as páginas |
+| `ADS_WHATSAPP = 'AW-16569561213/BYECCPupzIwaEP3g_dw9'` | conversão **Pixel Zap** do Google Ads, enviada a cada clique em WhatsApp |
+| `GTM_ID = ''` | contêiner do Google Tag Manager (opcional, vazio). O contêiner `GTM-NM35MF82` foi criado, mas não está em uso |
+
+Cada clique também dispara um evento no `dataLayer`, que pode ser usado no futuro (por exemplo, se o GTM for ligado):
 
 | Evento | Quando |
 |---|---|
-| `whatsapp_click` | qualquer botão de WhatsApp (inclusive o envio do orçamento interativo) |
+| `whatsapp_click` | qualquer botão de WhatsApp (inclusive o envio do orçamento interativo). Também envia a conversão **Pixel Zap** |
 | `phone_click` | qualquer botão de ligar |
 | `directions_click` | botão **Como chegar** e endereço |
 | `instagram_click` / `facebook_click` | links das redes sociais |
 
 Parâmetros enviados junto: `click_location` (ex.: `header`, `card-servico`, `barra-fixa`, `topo-servico`), `service` (nome do serviço, quando houver) e `page_path`.
 
-3. O consentimento começa **negado** e muda para concedido quando o visitante clica em **Aceitar** no aviso de cookies (que só aparece depois que o ID do GTM for preenchido).
+O consentimento começa **negado** e muda para concedido quando o visitante clica em **Aceitar** no aviso de cookies.
 
-### Contêiner pronto: `gtm/original-abc-gtm.json`
+**Conversões do Google Ads hoje:** "Conversation started" (botão de WhatsApp no próprio anúncio) e "Whatsapp" (ligação pelo anúncio) não dependem do site. "Pixel Zap" (WhatsApp no site) vem deste código.
 
-Em vez de criar as tags uma a uma, importe o arquivo `gtm/original-abc-gtm.json` no contêiner **GTM-NM35MF82**. Ele já vem preenchido com a conta do Google Ads (`AW-16569561213`):
-
-| No GTM | O que faz |
-|---|---|
-| Tag **Google tag - Google Ads** | carrega o Google Ads (`AW-16569561213`) em todas as páginas |
-| Tag **Conversion Linker** | guarda o clique do anúncio para a conversão ser atribuída |
-| Tag **Google Ads - Conversão WhatsApp (Pixel Zap)** | conta a conversão **Pixel Zap** (rótulo `BYECCPupzIwaEP3g_dw9`) a cada `whatsapp_click` |
-| Tag **Google Ads - Conversão Ligação** | **pausada**: ainda não existe conversão para o botão Ligar do site |
-| Variáveis **Ads - ID de conversão**, **Ads - Rótulo WhatsApp**, **Ads - Rótulo Ligação** | os dados que vêm do Google Ads |
-| Variáveis **DL - service** e **DL - click_location** | serviço e local do clique, para relatórios |
-
-**Importar:**
-1. [tagmanager.google.com](https://tagmanager.google.com) → contêiner **originalabc.com.br** (`GTM-NM35MF82`).
-2. **Administrador → Importar contêiner** → escolha `gtm/original-abc-gtm.json` → espaço de trabalho **Existente (Default Workspace)** → **Mesclar** → **Renomear tags, acionadores e variáveis conflitantes** → **Confirmar**.
-3. **Visualizar** → abra o site → toque num botão de WhatsApp → a tag **Google Ads - Conversão WhatsApp (Pixel Zap)** deve aparecer como **disparada**.
-4. **Enviar → Publicar**.
-
-**Para medir também o botão Ligar do site:** no Google Ads, **Metas → Conversões → + Nova ação de conversão → Site → Adicionar manualmente**, categoria **Contato**, nome `Ligação - clique no site`, contagem **Uma**. Copie o **Rótulo** para a variável **Ads - Rótulo Ligação**, despause a tag **Google Ads - Conversão Ligação** e publique.
+**Para medir também o botão Ligar do site:** no Google Ads, **Metas → Conversões → + Nova ação de conversão → Site → Adicionar manualmente**, categoria **Contato**, nome `Ligação - clique no site`, contagem **Uma**. Com o rótulo dela, dá para enviar a conversão no `phone_click` do mesmo jeito que o WhatsApp.
 
 ## 11. Como editar
 
