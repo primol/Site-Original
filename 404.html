@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Página não encontrada | Original ABC</title>
   <meta name="robots" content="noindex">
+  <!-- Medição do Google Ads (tag do Google GT-WV8X3T9D): os IDs ficam em js/gtm.js -->
+  <script src="/js/gtm.js"></script>
   <style>
     :root{--bg:#0b0b0d;--red:#d71920;--wa:#25d366}
     *{box-sizing:border-box;margin:0}
@@ -33,6 +35,14 @@
       var seg = location.pathname.split('/')[1];
       if (/github\.io$/.test(location.hostname) && seg) document.querySelector('[data-home]').href = '/' + seg + '/';
     })();
+    // Clique no WhatsApp: mesmo evento e conversão "Pixel Zap" das outras páginas (ver js/main.js)
+    document.querySelector('.wa').addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'whatsapp_click', click_location: 'pagina-404', service: '', page_path: location.pathname });
+      if (window.OABC_ADS_WHATSAPP && typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', { send_to: window.OABC_ADS_WHATSAPP });
+      }
+    });
   </script>
 </body>
 </html>
