@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Resumo da empresa e dos serviços para assistentes de IA: https://originalabc.com.br/llms.txt
 Sitemap: https://originalabc.com.br/sitemap.xml

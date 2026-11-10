@@ -133,6 +133,7 @@ js/main.js                       → rastreamento dos cliques
 js/gtm.js                        → tag do Google e conversão do Google Ads (seção 10)
 img/                             → fotos
 sitemap.xml, robots.txt
+llms.txt                         → resumo da empresa e dos serviços para assistentes de IA
 ```
 
 **Como ajudar:** abra o arquivo no GitHub, clique no lápis ✏️, edite e clique em **Commit changes**. Tudo fica registrado e pode ser desfeito.
@@ -261,3 +262,9 @@ Apague os registros `A`/`AAAA`/`CNAME` **antigos** de `@` e de `www` que apontam
 ### Endereços do site antigo que redirecionam para o novo
 
 `/quem-somos/`, `/reparos-express/`, `/estetica-automotiva/`, `/recuperacao-de-para-choque/`, `/higienizacao-automotiva-2/`, `/ozonizacao-automotiva/`, `/carga-de-gas-ecologica-2/`, `/home-1/`, `/original-abc-funilaria-express-e-estetica-automotiva/`, `/privacy-policy-2/` e `/author/gaefke/`. As páginas de serviço antigas (`/martelinho-de-ouro/`, `/micro-pintura/`, `/funilaria-express/`, `/polimento/`, `/vitrificacao/`, `/super-lavagem-a-vapor/`) já existem com o mesmo endereço no site novo.
+
+## 14. Textos para a busca do Google e para assistentes de IA
+
+- As páginas de Martelinho, Micropintura, Funilaria, Polimento e Vitrificação têm um parágrafo com a região (Santo André, São Bernardo do Campo e São Caetano do Sul) e perguntas frequentes no formato em que as pessoas buscam ("Quanto custa…?", "Onde fazer… em Santo André?"). As mesmas perguntas estão no bloco `FAQPage` do `<head>`: quem mudar uma pergunta na página deve mudar lá também.
+- `llms.txt` (na raiz) resume a empresa, os serviços, o endereço, o horário e como funciona o atendimento, para assistentes de IA (ChatGPT, Claude, Perplexity). O Google não usa esse arquivo; para o Google valem o texto das páginas e os dados estruturados.
+- Ao mudar endereço, horário, telefone ou serviços, atualize também o `llms.txt`.
