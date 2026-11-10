@@ -31,7 +31,7 @@ Site para **captação de clientes pelo Google Ads**. Cada visita precisa virar 
 | Avaliação no Google | **4,7 estrelas, 120 avaliações** |
 
 ### Sobre a empresa
-Especialistas em **funilaria express de alta qualidade, martelinho de ouro, reparos rápidos e estética automotiva** em Santo André. Os sócios somam **mais de 35 anos de experiência** e fizeram um **estágio de 2 anos em Toronto (Canadá)**. Trabalham com produtos e parceiros como **3M e PPG**, com profissionais especializados e tecnologia de ponta.
+Especialistas em **funilaria express de alta qualidade, martelinho de ouro, reparos rápidos e estética automotiva** em Santo André. Os sócios somam **mais de 35 anos de experiência**, com profissionais especializados e tecnologia de ponta.
 
 ### Frases e diferenciais que podem ser usados
 - "Seu carro novo, de novo!"
@@ -180,6 +180,8 @@ Ficaram de fora de propósito (regra do Google Ads de não fazer promessas que n
 - "Proteção duradoura até 6 meses ou 20 lavagens" (polimento)
 - Um trecho da página de Funilaria que citava **outra empresa** ("Crossover Autos", "mais de 40 anos")
 - A "Escola Profissionalizante / cursos" citada em Quem somos (não está no briefing)
+- O estágio em Toronto (Canadá) e a menção a 3M e PPG (retirados a pedido da empresa)
+- A palavra "massa" (a empresa prefere não usar; escrever "sem repintar" / "sem pintura")
 
 ## 10. Rastreamento (tag do Google + Google Ads)
 
