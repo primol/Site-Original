@@ -28,7 +28,7 @@ Site para **captação de clientes pelo Google Ads**. Cada visita precisa virar 
 | Facebook | `https://www.facebook.com/Originalreparosexpresscombr-463026191150110/` |
 | Site / domínio | **https://originalabc.com.br** (registrado no Registro.br) |
 | Horário | Segunda a Sexta 08 30 ate 18 00 de sabado das 08 00 ate 12 00 |
-| Avaliação no Google | **4,7 estrelas, 120 avaliações** |
+| Avaliação no Google | **4,7 estrelas, 136 avaliações** |
 
 ### Sobre a empresa
 Especialistas em **funilaria express de alta qualidade, martelinho de ouro, reparos rápidos e estética automotiva** em Santo André. Os sócios somam **mais de 35 anos de experiência**, com profissionais especializados e tecnologia de ponta.
@@ -75,7 +75,7 @@ Cada serviço precisa de **um card na página inicial** (foto, nome, descrição
 - **Muito WhatsApp:** botão no topo, no começo da página, em cada card de serviço, no meio e no fim de cada página, um botão flutuante e uma barra fixa embaixo no celular (com Ligar + WhatsApp). Cada botão já abre com uma mensagem pronta, por exemplo: *"Olá! Vim pelo site e quero um orçamento para o meu veículo."*
 - **Mapa do Google Maps** incorporado na página, com botão **"Como chegar"**
 - **Botão do Instagram** (@original.abc_) bem visível, e não só no rodapé
-- **Seção de avaliações** com a nota **4,7 e as 120 avaliações do Google**, mais os depoimentos acima
+- **Seção de avaliações** com a nota **4,7 e as 136 avaliações do Google**, mais os depoimentos acima
 - **Galeria de antes e depois**
 - **Fotos:** fachada, logo, foto de destaque e fotos de cada serviço. Vão entrar fotos do site antigo e muitas fotos novas
 - **Logo da oficina** no topo e no rodapé
@@ -145,7 +145,7 @@ llms.txt                         → resumo da empresa e dos serviços para assi
 
 O site está pronto no formato pedido acima (estático, para o GitHub Pages). Resumo do que já existe:
 
-- [x] **Página inicial** com todos os serviços em destaque, antes e depois, "Como funciona" (3 passos), **orçamento interativo** logo depois dos serviços (o cliente toca na peça do carro, diz o que aconteceu ali — amassado, risco, trinca… —, vê os marcadores numerados e o serviço indicado, e envia tudo pronto pelo WhatsApp, peça por peça), Quem somos, avaliações (4,7 · 120 + 3 depoimentos reais), perguntas frequentes, mapa e botão **Como chegar**
+- [x] **Página inicial** com todos os serviços em destaque, antes e depois, "Como funciona" (3 passos), **orçamento interativo** logo depois dos serviços (o cliente toca na peça do carro, diz o que aconteceu ali — amassado, risco, trinca… —, vê os marcadores numerados e o serviço indicado, e envia tudo pronto pelo WhatsApp, peça por peça), Quem somos, avaliações (4,7 · 136 + 3 depoimentos reais), perguntas frequentes, mapa e botão **Como chegar**
 - [x] **Uma página por serviço**, nos endereços da tabela da seção 3, com título e descrição próprios, FAQ, antes e depois (quando há foto) e WhatsApp no topo, no meio e no fim
 - [x] Cada botão de serviço abre o WhatsApp com *"Olá! Tenho interesse em realizar um serviço de XXXXX."*; os botões gerais usam *"Olá! Vim pelo site e quero um orçamento para o meu veículo."*
 - [x] WhatsApp em verde `#25d366` **só** nos botões de WhatsApp; botão flutuante no computador e **barra fixa Ligar + WhatsApp** no celular
